@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+    <header>
+        <nav class="caixa-titulo">Cadastro Básico com API REST</nav>
+        <div class="container">
+            <div class="cadastro">
+                <div class="titulo-cadastro">Cadastro</div>
+
+                <div class="caixa-form">
+                    <form action="{% url 'homePage' %}" method="post"> {% csrf_token %}
+                        <input type="text" name="user_nickname" placeholder="Digite seu nickname..." required>
+                        <input type="text" name="user_name" placeholder="Digite seu nome completo..." required>
+                        <input type="email" name="user_email" placeholder="Digite seu email..." required>
+                        <input type="number" name="user_age" placeholder="Digite sua idade..." required>
+                        <input class="button-submit" type="submit" value="Enviar">
+                    </form>
+                </div> 
+            </div>
+        
+            <aside>
+                <h1>Como usar a API:</h1>
+                <ul>
+                    <li>Use api/ para achar todos os usuários criados</li>
+                    <li>Use api/user/nickname desejado para obter os dados de um usuário específico</li>
+                    <li>Use api/data/?user=nickname para conseguir fazer POST e PUT</li>
+                </ul>
+            </aside>
+        </div>
+    </header>
+
+    
+
+    
+</body>
+</html>
